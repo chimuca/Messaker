@@ -1,5 +1,5 @@
 #安装说明:
-	TeamTalk整套服务提供模块部署脚本和一键部署方案，主要模块有NGINX,PHP,MARIADB(MYSQL),REDIS,IM_WEB,IM_SERVER,其中IM_WEB,IM_SERVER为自主开发模块,其余均为开源解决方案,各个模块	需要手动改动的地方如下:
+	TeamTalk整套服务提供模块部署脚本和一键部署方案，主要模块有NGINX,PHP,MARIADB(MYSQL),REDIS,IM_WEB,IM_SERVER,其中IM_WEB,IM_SERVER为自主开发模块,其余均为开源解决方案.各个模块需要手动改动的地方如下:
 ######NGINX: 
 	无需改动
 
@@ -71,7 +71,7 @@
 	TeamTalk的各模块支持安装到不同的服务器上,所以部署可以根据自己的需要进行模块安装,主要修改的地方即为上述各个模块中的IP地址设置。根据自己的网络拓扑在conf文件夹下的各个配置文件中预先设置正确的IP地址,然后执行模块内的"setup install"即可
 
 
-###安装实例：
+#####一键部署实例：
 尝试在同一服务器上部署全部服务，CentOS 7平台（本人使用的是CentOS-7-x86_64-Everything-1503-01）。具体分为如下步骤：
 对于mini版的centos，需要安装killall，chmod，netstat命令。
 
