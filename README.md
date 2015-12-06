@@ -71,6 +71,52 @@
 	TeamTalk的各模块支持安装到不同的服务器上,所以部署可以根据自己的需要进行模块安装,主要修改的地方即为上述各个模块中的IP地址设置。根据自己的网络拓扑在conf文件夹下的各个配置文件中预先设置正确的IP地址,然后执行模块内的"setup install"即可
 
 
-###IM_SERVER与IM_DB_PROXY架构图如下:
+###安装实例
+尝试在同一服务器上部署全部服务，CentOS 7平台（本人使用的是CentOS-7-x86_64-Everything-1503-01）。具体分为如下步骤：
+对于mini版的centos，需要安装killall，chmod，netstat命令。
+killall   yum install psmisc
+chmod     yum install coreutils
+netstat   yum install net-tools
 
-![](https://raw.githubusercontent.com/mogutt/TTServer/master/docs/pics/server.jpg)
+若安装过程中因缺少命令而终止，则应当重启服务器
+
+1.安装全新的CentOS 7 64位.
+
+2.将auto_setup_change.zip解压至/home/auto_setup。
+
+3.yum install gcc-c++
+
+4. 部署
+
+假定服务器IP为192.168.30.128
+
+cd /home/auto_setup
+
+chmod a+x *.sh
+
+./pre-a.sh 192.168.30.128
+
+./setup-a.sh install
+
+注：在配置MariaDB数据库时，需要交互：
+
+Enter current password for root(enter for none):  直接回车
+
+Set root password? [Y/n]  输入:y，回车
+
+New password:           输入:12345
+
+Re-enter new password:   输入:12345
+
+其它则根据自己情况选择。
+
+
+5.关闭firewall
+      systemctl stopfirewalld.service  #停止firewall
+      systemctl disablefirewalld.service  #禁止firewall开机启动
+ 
+6.添加用户
+http:// 192.168.30.128
+用户名：admin密码：admin
+
+
