@@ -1,3 +1,6 @@
+#项目说明
+本项目来自TeamTalk，是项目的服务端一键部署。
+
 #安装说明:
 	TeamTalk整套服务提供模块部署脚本和一键部署方案，主要模块有NGINX,PHP,MARIADB(MYSQL),REDIS,IM_WEB,IM_SERVER,其中IM_WEB,IM_SERVER为自主开发模块,其余均为开源解决方案.各个模块需要手动改动的地方如下:
 ######NGINX: 
